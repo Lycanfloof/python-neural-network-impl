@@ -4,8 +4,8 @@ from Layer import Layer
 class DenseLayer(Layer):
   def __init__(self, input_size, output_size) -> None:
     super().__init__()
-    self.weights = np.random.rand(output_size, input_size)
-    self.bias = np.random.rand(output_size, 1)
+    self.weights = np.random.rand(output_size, input_size) - 0.5
+    self.bias = np.random.rand(output_size, 1) - 0.5
 
   def forward_propagation(self, input) -> np.ndarray:
     self.input = input
