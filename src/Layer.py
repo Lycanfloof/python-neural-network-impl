@@ -6,7 +6,7 @@ class Layer:
     self.output = None
 
   def forward_propagation(self, input) -> np.ndarray:
-    pass
+    raise NotImplementedError
 
   def backward_propagation(self, cost, learning_rate) -> np.ndarray:
-    pass
+    raise NotImplementedError

@@ -23,3 +23,9 @@ def relu(z):
 
 def relu_prime(z):
   return (z > 0).astype(int)
+
+def tanh(z):
+  return np.tanh(z)
+
+def tanh_prime(z):
+  return 1 - np.square(np.tanh(z))

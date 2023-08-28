@@ -6,6 +6,10 @@ class NeuralNetwork:
     self.cost_prime = cost_prime
     self.layers = layers
 
+  def use(self, cost_function, cost_prime):
+    self.cost_function = cost_function
+    self.cost_prime = cost_prime
+
   def set_layers(self, layers) -> None:
     self.layers = layers
 
@@ -16,7 +20,7 @@ class NeuralNetwork:
     for epoch in range(epochs):
       output = self.__forward_propagation(x_train)
 
-      if verbose: print("Epoch: {} -> Cost: {}".format(epoch + 1, self.cost_function(output, y_train)))
+      if verbose: print("Epoch: {}/{} -> Cost: {}".format(epoch + 1, epochs, self.cost_function(output, y_train)))
 
       cost = self.cost_prime(output, y_train)
       self.__backward_propagation(cost, learning_rate)
