@@ -2,8 +2,9 @@ import numpy as np
 from Layer import Layer
 
 class DenseLayer(Layer):
-  def __init__(self, input_size, output_size) -> None:
+  def __init__(self, input_size, output_size, seed = 42) -> None:
     super().__init__()
+    np.random.seed(seed)
     self.weights = np.random.rand(output_size, input_size) - 0.5
     self.bias = np.random.rand(output_size, 1) - 0.5
 
